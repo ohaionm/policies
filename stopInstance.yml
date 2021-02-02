@@ -1,0 +1,20 @@
+policies:
+  - name: policy-1
+    resource: gcp.instance
+    filters:
+      - type: value
+        key: name
+        value: test
+    mode: 
+       type: gcp-periodic
+       schedule: "every 11 hours"
+    actions:
+     - type: stop
+  - name: policy-2
+    resource: gcp.instance
+    filters:
+      - type: value
+        key: name
+        value: test2
+    actions:
+     - type: stop
